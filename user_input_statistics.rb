@@ -1,12 +1,16 @@
-require 'pry'
-
-def is_numeric?(value)
-  true if value.to_i.to_s == value || value.to_f.to_s == value
+def numeric?(value)
+  if value.to_i.to_s == value || value.to_f.to_s == value
+    true
+    #TODO: method to push values into array
+  else
+    false
+    #TODO: method to inform user of invalid input
+  end
 end
 
-
-
-
+def count(value)
+  input = []
+end
 # user_input_stat = []
 # num = nil
 #
