@@ -105,7 +105,7 @@ def main()
         try_again()
       end
       if user_input == ""
-        if elements.include?(user_input.is_a? String)
+        if !elements.include? String
           puts elements.join
           puts elements.count
           puts elements.length.min
