@@ -6,7 +6,7 @@ The program entitled 'user_input_stat.rb' is a basic program intended to repeate
 
 The instructions below will help you retrieve a copy of the project to run on your local machine through the Terminal application. Please see deployment for notes on how to deploy the project on a live system.  The instructions provided are for macbook users.
 
-### Prerequisities
+### Prerequisites
 
 You may need to install or update the following software.
 
@@ -28,6 +28,7 @@ Install rbenv & ruby-build - to install and compile different versions of Ruby c
 Install ruby 2.3.1 - the latest version of Ruby
   1. Close and reopen Terminal.```rbenv install 2.3.1```
   2. After quite some time, run:```rbenv global 2.3.1```
+
 Once you have completed the above installation processes your system should be ready to launch the program!
 
 ## Deployment
@@ -36,7 +37,10 @@ Please complete the following procedure to run the program on a live system:
   1. Open Terminal.
   2. Change your directory to the one that which you have saved this zip file.`cd folder_name`
   3. Type `ruby user_input_stat.rb` OR  `ruby user_input_stat_advanced.rb` to run the program.
-  4. READ all instructions BEFORE adding input.
+
+## Tests
+
+The test suite for these assignments utilizes Minitest.
 
 ## Built With
 
