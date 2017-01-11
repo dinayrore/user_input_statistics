@@ -1,5 +1,7 @@
+require 'pry'
+
 def is_numeric?(value)
-  false
+  true if value.to_i.to_s == value || value.to_f.to_s == value
 end
 
 
