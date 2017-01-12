@@ -5,12 +5,11 @@ end
 
 def numeric?(value, input)
   if value.class == Fixnum || value.class == Float
-    true
-    #TODO: input << value
+    input << value
   else
-    false
-    #TODO: print 'Invalid input. '
+    print 'Invalid input. '
   end
+  input
 end
 
 def calculate_sum(input)
@@ -34,7 +33,7 @@ def main
   input = []
   until gets.chomp.empty?
     value = user_input
-    numeric?(value, input)
+    input = numeric?(value, input)
   end
   print_statistics(input)
 end
