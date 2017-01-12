@@ -4,7 +4,7 @@ def user_input
 end
 
 def numeric?(value, input)
-  if value.class == Fixnum || value.class == Float
+  if value.to_i.to_s == value || value.to_f.to_s == value
     input << value
   else
     print 'Invalid input. '
