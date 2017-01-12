@@ -18,7 +18,7 @@ def calculate_sum(input)
 end
 
 def calculate_average(sum, input)
-  average = sum / user_input_stat.count
+  average = sum / input.count
 end
 
 def print_statistics(input)
