@@ -4,46 +4,39 @@ def user_input
 end
 
 def numeric?(value, input)
-  if value.to_i.to_s == value || value.to_f.to_s == value
-    input << value
+  if value.class == Fixnum || value.class == Float
+    true
+    #TODO: input << value
   else
-    puts 'Invalid input '
+    false
+    #TODO: print 'Invalid input. '
   end
 end
 
-# def store_value
-# end
-#
+def calculate_sum(input)
+  sum = 0
+  input.each { |v| sum += v.to_f }
+end
 
-#
-# def count()
-# end
+def calculate_average(sum, input)
+  average = sum / user_input_stat.count
+end
 
-
-#
-#   if (num.to_i.to_s == num)|| (num.to_f.to_s == num)
-#     user_input_stat << num
-#   else #(num.to_i.to_s != num)|| (num.to_f.to_s != num)
-#     print "invalid input "
-#   end
-# end
-#
-# #p user_input_stat (to print array for check)
-#
-# puts "Count: #{user_input_stat.count}"
-#     sum = 0
-#     user_input_stat.each {|n| sum += n.to_f } #sum
-# puts "Sum: #{sum}"
-#     average = sum / user_input_stat.count #average
-# puts "Average: #{average}"
+def print_statistics(input)
+  puts "Count: #{input.count}"
+  sum = calculate_sum(input)
+  puts "Sum: #{sum}"
+  average = calculate_average(sum, input)
+  puts "Average: #{average}"
+end
 
 def main
   input = []
-  value = nil
-  until value == ''
+  until gets.chomp.empty?
     value = user_input
     numeric?(value, input)
   end
+  print_statistics(input)
 end
 
 main if __FILE__ == $PROGRAM_NAME
