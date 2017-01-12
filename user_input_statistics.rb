@@ -5,7 +5,7 @@ end
 
 def numeric?(value, input)
   if value.to_i.to_s == value || value.to_f.to_s == value
-    input << value
+    input << value # how do I change my Minitests to include pushing values into an array?
   else
     print 'Invalid input. '
   end
@@ -31,7 +31,7 @@ end
 
 def main
   input = []
-  until gets.chomp.empty?
+  until gets.chomp.empty? # issue with using this instead of using value == ''
     value = user_input
     input = numeric?(value, input)
   end
