@@ -1,12 +1,18 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    coderay (1.1.1)
     diff-lcs (1.2.5)
+    method_source (0.8.2)
     minitest (5.10.1)
     minitest-nyan-cat (0.0.1)
       nyan-cat-formatter (= 0.11)
     nyan-cat-formatter (0.11)
       rspec (>= 2.99, >= 2.14.2, < 4)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -20,6 +26,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    slop (3.6.0)
 
 PLATFORMS
   ruby
@@ -27,6 +34,9 @@ PLATFORMS
 DEPENDENCIES
   minitest
   minitest-nyan-cat
+  nyan-cat-formatter
+  pry (~> 0.10.4)
+  rspec (~> 3.5)
 
 RUBY VERSION
    ruby 2.3.1p112
