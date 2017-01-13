@@ -1,13 +1,18 @@
-def user_input
+def user_input(input)
   puts 'Enter a number: '
   value = gets.chomp
+  numeric?(value, input)
 end
 
 def numeric?(value, input)
   if value.to_i.to_s == value || value.to_f.to_s == value
-    input << value # how do I change my Minitests to include pushing values into an array?
+    input << value
+    user_input(input)
+  elsif value == "\n"
+    print_statistics(input)
   else
     print 'Invalid input. '
+    user_input(input)
   end
   input
 end
@@ -31,11 +36,7 @@ end
 
 def main
   input = []
-  until gets.chomp.empty? # issue with using this instead of using value == ''
-    value = user_input
-    input = numeric?(value, input)
-  end
-  print_statistics(input)
+  user_input(input)
 end
 
 main if __FILE__ == $PROGRAM_NAME
