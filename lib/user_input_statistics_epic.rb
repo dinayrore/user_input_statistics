@@ -1,6 +1,11 @@
 require 'pry'
-#
-class UserInputStatisticsEpic
+
+def numeric?(value, numbers)
+  numbers << value if value.to_i.to_s == value || value.to_f.to_s == value
+end
+
+def string?(value, words)
+  
 end
 
 # class String
