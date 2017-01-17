@@ -18,12 +18,12 @@ def calculate_sum(input)
 end
 
 def calculate_average(sum, input)
-  average = sum / input.count
+  average = calculate_sum(input) / input.count
 end
 
 def print_statistics(input, sum, average)
   puts "Count: #{input.count}"
-  puts "Sum: #{sum.round(2)}"
+  puts "Sum: #{sum}"
   puts "Average: #{average.round(2)}"
 end
 
@@ -35,9 +35,8 @@ def main
     numeric?(value, input)
     validate_input(value, input)
   end
-  sum = calculate_sum(input)
-  average = calculate_average(sum, input)
-  input = print_statistics(input, sum, average)
+  sum = calculate_average(input)
+  average = print_statistics(input, sum, average)
 end
 
 main if __FILE__ == $PROGRAM_NAME
