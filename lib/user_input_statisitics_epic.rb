@@ -1,6 +1,7 @@
 require 'pry'
-
-
+#
+class UserInputStatisticsEpic
+end
 
 # class String
 #   def is_string?
