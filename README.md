@@ -41,7 +41,7 @@ Please complete the following procedure to run the program on a live system:
 
 ## Tests
 
-The test suite for this assignment utilizes both Minitest and RSpec.  Both tests utilize the nyan-cat-formatter to display test results.  To run the Minitest suite for `user_input_statistics.rb` enter the code: `ruby user_input_statistics_test.rb` into the CLI.  To run the remaining Minitest suites follow the same pattern as above with the newly specified document name.  To run all RSpec related test files, enter the code: `rspec spec` into the CLI. 
+The test suite for this assignment utilizes both Minitest and RSpec.  Both tests utilize the nyan-cat-formatter to display test results.  To run the Minitest suite for `user_input_statistics.rb` enter the code: `ruby user_input_statistics_test.rb` into the CLI.  To run all RSpec related test files, enter the code: `rspec spec` into the CLI. 
 
 ## Built With
 
