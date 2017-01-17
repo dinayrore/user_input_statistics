@@ -36,7 +36,7 @@ def main
     validate_input(value, input)
   end
   sum = calculate_sum(input)
-  average = sum / input.count
+  average = calculate_average(sum, input)
   input = print_statistics(input, sum, average)
 end
 
