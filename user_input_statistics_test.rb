@@ -24,7 +24,7 @@ class TestUserInputStatistics < Minitest::Test
 
   def test_calculate_average
     assert_equal(0, calculate_average(0, ['0']))
-    assert_equal(16, calculate_average(33, ['42', '-9']))
+    assert_equal(16.5, calculate_average(33, ['42', '-9']))
     assert_equal(8.805, calculate_average(35.22, ['42', '3.45', '-9', '-1.23']))
   end
 end
