@@ -1,3 +1,4 @@
+# This code was constructed during the first days of my TIY experience
 class String
   def is_string?
     self == self
