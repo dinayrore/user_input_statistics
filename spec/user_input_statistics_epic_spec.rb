@@ -1,7 +1,7 @@
 require 'user_input_statistics_epic'
 
 describe 'User Input Statistics Epic Mode' do
-  describe '#numeric' do
+  describe '#numeric?' do
     context "given '42', []" do
       it "returns ['42']" do
         expect(numeric('42', [])).to eq(['42'])
