@@ -13,7 +13,8 @@ end
 
 def calculate_sum(input)
   sum = 0
-  input.inject(0) { |sum,v| sum + v.to_f }
+  input.each { |v| sum += v.to_f }
+  sum = sum.round(2)
 end
 
 def calculate_average(sum, input)
@@ -22,8 +23,8 @@ end
 
 def print_statistics(input, sum, average)
   puts "Count: #{input.count}"
-  puts "Sum: #{sum}"
-  puts "Average: #{average}"
+  puts "Sum: #{sum.round(2)}"
+  puts "Average: #{average.round(2)}"
 end
 
 def main
