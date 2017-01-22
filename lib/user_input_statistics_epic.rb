@@ -1,4 +1,7 @@
 require 'pry'
+require_relative 'Input'
+# require_relative 'NumericStatistic'
+# require_relative 'StringStatistic'
 
 def enter_value
   puts 'Enter a number OR word: '
@@ -14,6 +17,7 @@ def print_string_statistics
 end
 
 def print_numeric_statistics
+  binding.pry
   puts "Count: #{numeric_count}"
   puts "Sum: #{sum}"
   puts "Average/Mean: #{average}"
@@ -22,7 +26,6 @@ def print_numeric_statistics
   puts "Standard Deviation: #{standard_diviation}"
 end
 
-#
 # def try_again()
 #   puts "Invalid input. Would you like to try again?"
 #   print "Type \'retry\' to try again or \'exit\' to return to the Terminal: "
@@ -33,7 +36,6 @@ end
 #     exit
 #   end
 # end
-#
 
 def main
   array = []
@@ -48,34 +50,4 @@ def main
   #TODO: method to calculate string statistics
 end
 
-#
-#
-#   loop do
-#     puts "Enter a number OR a 'string' value: "
-#     user_input = gets.chomp
-#
-#     if (user_input.to_i.to_s == user_input) || (user_input.to_f.to_s == user_input)
-#       elements.include?(user_input.is_a? Float)
-#       elements << user_input.to_f
-#
-#     elsif elements.include?(user_input.is_a? String)
-#       elements << user_input
-#
-#     else
-#       if elements.include?(user_input.is_a? String) && elements.include?(user_input.is_a? Float)
-#         try_again()
-#       end
-#       if user_input == ""
-#         if !elements.include? String
-#
-#           exit
-#         else
-#
-#           exit
-#         end
-#       end
-#     end
-#   end
-# end
-#
 main if __FILE__ == $PROGRAM_NAME
