@@ -4,8 +4,23 @@ def enter_value
   puts 'Enter a number OR word: '
   value = gets.chomp
 end
-#
-#
+
+def print_string_statistics
+  puts "Count: #{string_count}"
+  puts "Minimum String Length: #{minimum_string_length}"
+  puts "Maximum String Length: #{maximum_string_length}"
+  puts "Average String Length: #{average_string_length}"
+  puts "How many letter 'e's': #{common_letters}"
+end
+
+def print_numeric_statistics
+  puts "Count: #{elements.count}"
+  puts "Sum: #{get_sum(elements)}"
+  puts "Average/Mean: #{get_average(elements)}"
+  puts "Median: #{get_median(elements)}"
+  puts "Mode: #{get_mode(elements)}"
+  puts "Standard Deviation: #{get_standard_diviation(elements)}"
+end
 
 #
 # def try_again()
@@ -31,9 +46,6 @@ def main
   #TODO: try again method if both words and numbers were entered into the array
   #TODO: method to calculate numeric statistics
   #TODO: method to calculate string statistics
-  sum = calculate_sum(input)
-  average = sum / input.count
-  input = print_statistics(input, sum, average)
 end
 
 #
@@ -55,20 +67,10 @@ end
 #       end
 #       if user_input == ""
 #         if !elements.include? String
-#           puts elements.join
-#           puts elements.count
-#           puts elements.length.min
-#           puts elements.length.max
-#           puts elements.length / elements.count
-#         #TODO: The number of times the letter e was used in the inputs.
+#
 #           exit
 #         else
-#           puts "Count: #{elements.count}"
-#           puts "Sum: #{get_sum(elements)}"
-#           puts "Average/Mean: #{get_average(elements)}"
-#           puts "Median: #{get_median(elements)}"
-#           puts "Mode: #{get_mode(elements)}"
-#           puts "Standard Deviation: #{get_standard_diviation(elements)}"
+#
 #           exit
 #         end
 #       end
@@ -76,6 +78,4 @@ end
 #   end
 # end
 #
-# if __FILE__ == $PROGRAM_NAME
-# main
-# end
+main if __FILE__ == $PROGRAM_NAME
