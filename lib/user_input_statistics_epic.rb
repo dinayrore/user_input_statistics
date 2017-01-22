@@ -14,12 +14,12 @@ def print_string_statistics
 end
 
 def print_numeric_statistics
-  puts "Count: #{elements.count}"
-  puts "Sum: #{get_sum(elements)}"
-  puts "Average/Mean: #{get_average(elements)}"
-  puts "Median: #{get_median(elements)}"
-  puts "Mode: #{get_mode(elements)}"
-  puts "Standard Deviation: #{get_standard_diviation(elements)}"
+  puts "Count: #{numeric_count}"
+  puts "Sum: #{sum}"
+  puts "Average/Mean: #{average}"
+  puts "Median: #{median}"
+  puts "Mode: #{mode}"
+  puts "Standard Deviation: #{standard_diviation}"
 end
 
 #
