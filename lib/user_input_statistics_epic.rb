@@ -1,7 +1,7 @@
 require 'pry'
-require_relative 'Input'
-# require_relative 'NumericStatistic'
-# require_relative 'StringStatistic'
+require_relative 'input'
+require_relative 'numeric_statistic'
+require_relative 'string_statistic'
 
 def enter_value
   puts 'Enter a number OR word: '
