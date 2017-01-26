@@ -33,12 +33,10 @@ class NumericStatistic
     else
       (median + 1) / 2.0
     end
-    median
   end
 
   def calculate_standard_diviation
     variance = array.sort
     standard_diviation = Math.sqrt(variance.max - variance.min)
   end
-  standard_diviation
 end
