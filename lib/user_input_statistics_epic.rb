@@ -4,15 +4,16 @@ require_relative 'numeric_statistic'
 require_relative 'string_statistic'
 
 def enter_value
-  puts 'Enter a number OR word: '
+  puts 'Please enter a number OR word. Press return to exit the program.'
   value = gets.chomp
+  value = Input.new(value)
 end
 
-def verify_values(array)
-  if array.all? do |value|
-    Input.float?(value) || Input.integer?(value) && value == String
-    try_again
-    end
+def verify_values(numbers, words)
+  if numbers
+    print_numeric_statistics(numbers)
+  else
+    print_string_statistics(words)
   end
 end
 
@@ -25,7 +26,6 @@ def print_string_statistics
 end
 
 def print_numeric_statistics
-  binding.pry
   puts "Count: #{numeric_count}"
   puts "Sum: #{sum}"
   puts "Average/Mean: #{average}"
@@ -34,29 +34,17 @@ def print_numeric_statistics
   puts "Standard Deviation: #{standard_diviation}"
 end
 
-def try_again()
-  puts 'Your data set contains both numeric values and strings.'
-  puts 'This input is invalid. Would you like to try again?'
-  print "Type \'retry\' to try again or \'exit\' to return to the Terminal: "
-  input = gets.chomp.downcase
-  if input == 'retry'
-    main
-  else
-    exit
-  end
-end
-
 def main
-  array = []
+  numeric = []
+  string = []
   loop do
     value = enter_value
     break if value == ''
-    Input.numeric?(value, array)
-    Input.string?(value, array)
+    string << value if value.string?
+    numeric << value.to_f if value.float?
+    numeric << value.to_i if value.float?
   end
-  verify_values(array)
-  #TODO: method to calculate numeric statistics
-  #TODO: method to calculate string statistics
+  verify_values(numbers, words)
 end
 
 main if __FILE__ == $PROGRAM_NAME
