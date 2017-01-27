@@ -1,25 +1,32 @@
 # Determine numberic statistics
 class NumericStatistic
-  def self.calculate_count(array)
+  attr_reader :array, :numeric_count, :sum, :average,
+              :mode, :median, :standard_diviation
+
+  def initialize(array)
+    @array = array
+  end
+
+  def calculate_count
     numeric_count = array.count
   end
 
-  def self.calculate_sum(array)
+  def calculate_sum
     sum = 0
     array.each { |num| sum += num.to_f }
     sum = sum.round(2)
   end
 
-  def self.calculate_average(array)
+  def calculate_average
     average = calculate_sum(array) / array.count
   end
 
-  def self.calculate_mode(array)
+  def calculate_mode
     mode = {}
     array.each { |num| mode[num] += 1 }
   end
 
-  def self.calculate_median(array)
+  def calculate_median
     median = array.sort
     if Integer.even?(array)
       (((median.length/2.0) + ((median.length + 1)/2.0)) / 2.0)
@@ -28,7 +35,7 @@ class NumericStatistic
     end
   end
 
-  def self.calculate_standard_diviation(array)
+  def calculate_standard_diviation
     variance = array.sort
     standard_diviation = Math.sqrt(variance.max - variance.min)
   end

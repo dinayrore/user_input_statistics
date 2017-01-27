@@ -14,22 +14,22 @@ def verify_objects(numeric, string)
 end
 
 def print_numeric_statistics(numeric)
-  binding.pry
-  puts "Count: #{NumericStatistic.calculate_count(numeric)}"
-  puts "Sum: #{NumericStatistic.calculate_sum(numeric)}"
-  puts "Average/Mean: #{NumericStatistic.calculate_average(numeric)}"
-  puts "Median: #{NumericStatistic.calculate_median(numeric)}"
-  puts "Mode: #{NumericStatistic.calculate_mode(numeric)}"
-  puts "Standard Deviation: #{NumericStatistic.calculate_standard_diviation(numeric)}"
+  numeric_stats = NumericStatistic.new(numeric)
+  puts "Count: #{numeric_stats.calculate_count}"
+  puts "Sum: #{numeric_stats.calculate_sum}"
+  puts "Average/Mean: #{numeric_stats.calculate_average}"
+  puts "Median: #{numeric_stats.calculate_median}"
+  puts "Mode: #{numeric_stats.calculate_mode}"
+  puts "Standard Deviation: #{numeric_stats.calculate_standard_diviation}"
 end
 
 def print_string_statistics(string)
-  binding.pry
-  puts "Count: #{StringStatistic.calculate_count(string)}"
-  puts "Minimum String Length: #{StringStatistic.calculate_minimum_length(string)}"
-  puts "Maximum String Length: #{StringStatistic.calculate_maximum_length(string)}"
-  puts "Average String Length: #{StringStatistic.calculate_average_length(string)}"
-  puts "How many letter 'e's': #{StringStatistic.calculate_commonalities(string)}"
+  string_stats = StringStatistic.new(string)
+  puts "Count: #{string_stats.calculate_count}"
+  puts "Minimum String Length: #{string_stats.calculate_minimum_length}"
+  puts "Maximum String Length: #{string_stats.calculate_maximum_length}"
+  puts "Average String Length: #{string_stats.calculate_average_length}"
+  puts "How many letter 'e's': #{string_stats.calculate_commonalities}"
 end
 
 def main
