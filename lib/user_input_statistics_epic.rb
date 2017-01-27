@@ -5,8 +5,7 @@ require_relative 'string_statistic'
 
 def enter_value
   puts 'Please enter a number OR word. Press return to exit the program.'
-  input = gets.chomp
-  value = Input.new(input)
+  value = gets.chomp
 end
 
 def verify_objects(numeric, string)
@@ -39,9 +38,9 @@ def main
   loop do
     value = enter_value
     break if value == ''
-    string << value if value.string?
-    numeric << value.to_f if value.float?
-    numeric << value.to_i if value.float?
+    string << value if Input.string?(value)
+    numeric << value.to_f if Input.float?(value)
+    numeric << value.to_i if Input.integer?(value)
   end
   verify_objects(numeric, string)
 end

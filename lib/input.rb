@@ -1,20 +1,14 @@
 # Determine type of user input
 class Input
-  attr_reader :value
-
-  def initialize(value)
-    @value = value
-  end
-
-  def string?
+  def self.string?(value)
     return true if value.to_i.to_s != value && value.to_f.to_s != value
   end
 
-  def float?
+  def self.float?(value)
     return true if value.to_f.to_s == value
   end
 
-  def integer?
+  def self.integer?(value)
     return true if value.to_i.to_s == value
   end
 end
