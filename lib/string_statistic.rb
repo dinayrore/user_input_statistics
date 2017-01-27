@@ -1,10 +1,10 @@
 # Determine string statistics
 class StringStatistic
-attr_reader :value, :string_count, :minimum_string_length,
+attr_reader :array, :string_count, :minimum_string_length,
             :maximum_string_length, :average_string_length, :common_letters
 
   def initialize(array)
-    @array=  array
+    @array =  array
   end
 
   def calculate_count
