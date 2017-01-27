@@ -8,7 +8,7 @@ class NumericStatistic
   end
 
   def calculate_count
-    numeric_count = value.count
+    numeric_count = array.count
   end
 
   def calculate_sum
