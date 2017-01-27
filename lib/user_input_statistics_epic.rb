@@ -5,33 +5,32 @@ require_relative 'string_statistic'
 
 def enter_value
   puts 'Please enter a number OR word. Press return to exit the program.'
-  value = gets.chomp
-  value = Input.new(value)
+  input = gets.chomp
+  value = Input.new(input)
 end
 
-def verify_values(numbers, words)
-  if numbers
-    print_numeric_statistics(numbers)
-  else
-    print_string_statistics(words)
-  end
+def verify_objects(numeric, string)
+  print_numeric_statistics(numeric) if numeric
+  print_string_statistics(string) if string
 end
 
-def print_string_statistics
-  puts "Count: #{string_count}"
-  puts "Minimum String Length: #{minimum_string_length}"
-  puts "Maximum String Length: #{maximum_string_length}"
-  puts "Average String Length: #{average_string_length}"
-  puts "How many letter 'e's': #{common_letters}"
+def print_string_statistics(string)
+  string_stats = StringStatistic.new(string)
+  puts "Count: #{string_stats.string_count}"
+  puts "Minimum String Length: #{string_stats.minimum_string_length}"
+  puts "Maximum String Length: #{string_stats.maximum_string_length}"
+  puts "Average String Length: #{string_stats.average_string_length}"
+  puts "How many letter 'e's': #{string_stats.common_letters}"
 end
 
-def print_numeric_statistics
-  puts "Count: #{numeric_count}"
-  puts "Sum: #{sum}"
-  puts "Average/Mean: #{average}"
-  puts "Median: #{median}"
-  puts "Mode: #{mode}"
-  puts "Standard Deviation: #{standard_diviation}"
+def print_numeric_statistics(numeric)
+  numeric_stats = NumericStatistic.new(numeric)
+  puts "Count: #{numeric_stats.numeric_count}"
+  puts "Sum: #{numeric_stats.sum}"
+  puts "Average/Mean: #{numeric_stats.average}"
+  puts "Median: #{numeric_stats.median}"
+  puts "Mode: #{numeric_stats.mode}"
+  puts "Standard Deviation: #{numeric_stats.standard_diviation}"
 end
 
 def main
@@ -44,7 +43,7 @@ def main
     numeric << value.to_f if value.float?
     numeric << value.to_i if value.float?
   end
-  verify_values(numbers, words)
+  verify_objects(numeric, string)
 end
 
 main if __FILE__ == $PROGRAM_NAME
