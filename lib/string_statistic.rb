@@ -1,29 +1,22 @@
 # Determine string statistics
 class StringStatistic
-attr_reader :array, :string_count, :minimum_string_length,
-            :maximum_string_length, :average_string_length, :common_letters
-
-  def initialize(array)
-    @array =  array
-  end
-
-  def calculate_count
+  def self.calculate_count(array)
     string_count = array.count
   end
 
-  def calculate_minimum_length
+  def self.calculate_minimum_length(array)
     minimum_string_length = array.length.min
   end
 
-  def calculate_maximum_length
+  def self.calculate_maximum_length(array)
     maximum_string_length = array.length.max
   end
 
-  def calculate_average_length
+  def self.calculate_average_length(array)
     average_string_length = array.length / array.count
   end
 
-  def calculate_commonalities
+  def self.calculate_commonalities(array)
     common_letters = array.count('e')
   end
 end
