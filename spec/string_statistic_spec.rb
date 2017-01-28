@@ -1,47 +1,47 @@
 require 'string_statistic.rb'
 
 describe StringStatistic do
-  before :all do
+  before :example do
     array = %w(kitten meow Rufus cat Jimothy)
-    string_stats = StringStatistic.new(array)
+    @string_stats = StringStatistic.new(array)
   end
   describe '.calculate_count' do
-    context "given string_stats" do
+    context "given ['kitten', 'meow', 'Rufus', 'cat', 'Jimothy']" do
       it 'returns 5' do
-        expect(string_stats.calculate_count).to_eq 5
+        expect(@string_stats.calculate_count).to eq 5
       end
     end
   end
 
   describe '.calculate_minimum_length' do
-    context "given string_stats" do
+    context "given ['kitten', 'meow', 'Rufus', 'cat', 'Jimothy']" do
       it 'returns 3' do
-        expect(string_stats.calculate_count).to_eq 3
+        expect(@string_stats.calculate_minimum_length).to eq 3
       end
     end
   end
 
 
   describe '.calculate_maximum_length' do
-    context "given string_stats" do
+    context "given ['kitten', 'meow', 'Rufus', 'cat', 'Jimothy']" do
       it 'returns 7' do
-        expect(string_stats.calculate_count).to_eq 7
+        expect(@string_stats.calculate_maximum_length).to eq 7
       end
     end
   end
 
-  describe '.calculate_maximum_length' do
-    context "given string_stats" do
-      it 'returns 4.8' do
-        expect(string_stats.calculate_count).to_eq 4.8
+  describe '.calculate_average_length' do
+    context "given ['kitten', 'meow', 'Rufus', 'cat', 'Jimothy']" do
+      it 'returns 5.0' do
+        expect(@string_stats.calculate_average_length).to eq 5.0
       end
     end
   end
 
   describe '.calculate_commonalities' do
-    context "given string_stats" do
+    context "given ['kitten', 'meow', 'Rufus', 'cat', 'Jimothy']" do
       it 'returns 2' do
-        expect(string_stats.calculate_count).to_eq 2
+        expect(@string_stats.calculate_commonalities).to eq 2
       end
     end
   end
