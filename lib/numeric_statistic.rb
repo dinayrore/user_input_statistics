@@ -1,39 +1,37 @@
-# Determine numberic statistics
+# Calculate numberic statistics
 class NumericStatistic
   def initialize(array)
     @array = array
   end
 
   def calculate_count
-    array.count
+    @array.count
   end
 
   def calculate_sum
     sum = 0
-    array.each { |num| sum += num.to_f }
-    sum = sum.round(2)
+    @array.each { |num| sum += num.to_f }
+    sum = sum.round(1)
   end
 
   def calculate_average
-    calculate_sum(array) / array.count
+    (calculate_sum / @array.count).round(1)
   end
 
   def calculate_mode
-    mode = {}
-    array.each { |num| mode[num] += 1 }
+    mode = @array.inject(Hash.new(0)) { |k, v| k[v] += 1; k }
+    @array.max_by { |value| mode[value] }
   end
 
   def calculate_median
-    median = array.sort
-    if Integer.even?(array)
-      (((median.length/2.0) + ((median.length + 1)/2.0)) / 2.0)
-    else
-      (median + 1) / 2.0
-    end
+    sorted = @array.sort
+    length = sorted.length
+    ((sorted[(length - 1) / 2] + sorted[length / 2]) / 2.0).round(1)
   end
 
   def calculate_standard_diviation
-    variance = array.sort
-    Math.sqrt(variance.max - variance.min)
+    mean = calculate_average
+    variance = @array.inject(0) { |v, n| v += (n - mean)**2 }
+    Math.sqrt(variance / (@array.size - 1)).round(1)
   end
 end
