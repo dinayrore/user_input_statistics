@@ -1,14 +1,11 @@
 # Determine numberic statistics
 class NumericStatistic
-  attr_reader :array, :numeric_count, :sum, :average,
-              :mode, :median, :standard_diviation
-
   def initialize(array)
     @array = array
   end
 
   def calculate_count
-    numeric_count = array.count
+    array.count
   end
 
   def calculate_sum
@@ -18,7 +15,7 @@ class NumericStatistic
   end
 
   def calculate_average
-    average = calculate_sum(array) / array.count
+    calculate_sum(array) / array.count
   end
 
   def calculate_mode
@@ -37,6 +34,6 @@ class NumericStatistic
 
   def calculate_standard_diviation
     variance = array.sort
-    standard_diviation = Math.sqrt(variance.max - variance.min)
+    Math.sqrt(variance.max - variance.min)
   end
 end
