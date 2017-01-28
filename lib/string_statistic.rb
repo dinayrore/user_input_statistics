@@ -9,11 +9,11 @@ class StringStatistic
   end
 
   def calculate_minimum_length
-    array.length.min if array.length > 1
+    array.min_by(&:length)
   end
 
   def calculate_maximum_length
-    array.length.max if array.length > 1
+    array.max_by(&:length)
   end
 
   def calculate_average_length
@@ -21,6 +21,6 @@ class StringStatistic
   end
 
   def calculate_commonalities
-    array.count('e')
+    array.join.count 'e'
   end
 end
